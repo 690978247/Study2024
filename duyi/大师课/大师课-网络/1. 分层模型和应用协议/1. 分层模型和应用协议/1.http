@@ -1,0 +1,9 @@
+POST /api/user/reg HTTP/1.1
+Host: study.duyiedu.com
+Content-Type: application/json
+
+{
+  "loginId": "sdfgdfsgsa",
+  "loginPwd": "123123",
+  "nickname": "邓哥"
+}
