@@ -17,6 +17,11 @@ module.exports = {
   devtool: 'source-map',
   devServer: {
     port: 8080,
+    // proxy: {
+    //   '/api': {
+    //     target:
+    //   }
+    // }
   },
   resolve: {
     alias: {
