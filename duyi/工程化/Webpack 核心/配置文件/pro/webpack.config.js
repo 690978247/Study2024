@@ -1,0 +1,5 @@
+// commonjs
+
+module.exports = {
+
+}
