@@ -6,11 +6,11 @@ module.exports = {
   mode: "development",
   devtool: 'source-map',
   entry: {
-    home: './src/index.js',
-    a: './src/a.js'
+    main: './src/index.js',
+    // a: './src/a.js'
   },
   output: {
-    filename: "[name].[fullhash:5].js",
+    filename: "scripts/[name].[fullhash:5].js",
     clean: true, // 清除dist文件
   },
   module: {
@@ -18,8 +18,19 @@ module.exports = {
       {
         test: /\.(png)|(jpg)|(gif)$/,
         use: [
-          {
-            loader: 'file-loader'
+          // { // 生成依赖的文件到输出目录，然后将模块文件设置为: 导出一个路径
+          //   loader: 'file-loader',
+          //   options: {
+          //     name:"imgs/[name][hash:6].[ext]"
+          //   }
+          // }
+          { // 将依赖的文件转换为：导出一个base64格式的字符串
+            loader: 'url-loader',
+            options: {
+              // limit: false, // 不限制文件大小
+              limit: 100 * 1024, // 只要文件不超过100 * 1024 字节，则使用base64编码，否则，交给file-loader处理
+              name: 'imgs/[name][hash:6].[ext]' // file-loader 名称
+            }
           }
         ]
       }
@@ -30,7 +41,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./public/index.html",
       // filename: 'home.html',
-      chunks: ["home"]
+      chunks: ["main"]
     }),
     // 生成多个html页面
     // new HtmlWebpackPlugin({
