@@ -13,6 +13,18 @@ module.exports = {
     filename: "[name].[fullhash:5].js",
     clean: true, // 清除dist文件
   },
+  module: {
+    rules: [
+      {
+        test: /\.(png)|(jpg)|(gif)$/,
+        use: [
+          {
+            loader: 'file-loader'
+          }
+        ]
+      }
+    ]
+  },
   plugins: [
     // 生成html模板
     new HtmlWebpackPlugin({
@@ -26,18 +38,18 @@ module.exports = {
     //   filename: 'a.html',
     //   chunks: ["a"]
     // })
-    new CopyPlugin({
-      patterns: [
-        // 赋值规则， 已存在的文件不会复制
-        { 
-          from: "./public",
-          to: "./",
-          globOptions: {
-            ignore: ["**/index.html"], // 排除 index.html
-          }
-         },
-      ],
-    }),
+    // new CopyPlugin({
+    //   patterns: [
+    //     // 赋值规则， 已存在的文件不会复制
+    //     { 
+    //       from: "./public",
+    //       to: "./",
+    //       globOptions: {
+    //         ignore: ["**/index.html"], // 排除 index.html
+    //       }
+    //      },
+    //   ],
+    // }),
   ],
   devServer: {
     port: 8086,
