@@ -1,0 +1,23 @@
+{
+  "name": "pro",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "postcss css/source.pcss -o css/out.css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.3",
+    "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0",
+    "style-loader": "^4.0.0",
+    "stylelint": "^16.11.0",
+    "stylelint-config-standard": "^36.0.1",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
+  }
+}
