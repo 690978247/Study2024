@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    const m1 = new Map([["a", 5],["b", 6], ["c", 7]])
+
+    // m1.set({}, 789)
+    // m1.set("a", "abc")
+    // m1.set({}, 111)
+
+    const obj = {}
+    m1.set(obj, 456)
+    m1.set("a", "abc")
+    m1.set(obj, 45678)
+
+    console.log(m1, m1.has('a'), m1.size);
+
+  </script>
+</body>
+</html>
