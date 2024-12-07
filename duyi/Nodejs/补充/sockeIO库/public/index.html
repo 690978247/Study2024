@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>发送数据到服务器11111111</button>
+  <script src="./socketio.js" ></script>
+  <script>
+    // 默认使用当前页面的地址
+    // const socket = io.connect('http://localhost:5008')
+    const socket = io.connect()
+
+    document.querySelector('button').onclick = () => {
+      socket.emit('msg', "msg from client")
+    }
+
+    socket.on("test", chunk => {
+      console.log(chunk);
+    })
+
+  </script>
+</body>
+</html>
