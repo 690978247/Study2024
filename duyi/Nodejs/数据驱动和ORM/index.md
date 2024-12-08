@@ -38,3 +38,7 @@ Node中的ORM
 - TypeORM
   - 仅支持 TS `注：以支持JS?`
   - 不成熟
+
+
+### 三层架构
+![alt text](模型的增删改/三层架构.jpg)
