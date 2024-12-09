@@ -17,6 +17,7 @@ const Class = sequelize.define("Class", {
   paranoid: true
 })
 
+// 建立一对多关系
 Class.hasMany(Student)
 
 module.exports = Class;

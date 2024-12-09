@@ -114,3 +114,5 @@ module.exports = {
 ### 自动分包
 
 ![alt text](1733295844896.jpg)
+
+splitChunk
